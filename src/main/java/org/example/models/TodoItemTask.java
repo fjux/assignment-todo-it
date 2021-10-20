@@ -1,10 +1,10 @@
 package org.example.models;
 
 public class TodoItemTask {
-    int id;
-    boolean assigned;
-    TodoItem todoitem;
-    Person assignee;
+    private int id;
+    private boolean assigned;
+    private TodoItem todoitem;
+    private Person assignee;
 
     public TodoItemTask(int id, boolean assigned, TodoItem todoitem, Person assignee) {
         if(todoitem == null){

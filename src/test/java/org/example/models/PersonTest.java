@@ -9,10 +9,9 @@ public class PersonTest {
     @Before
     public void setUp() throws Exception {
     testObject = new Person(1, "Erik", "Alfredsson", "erik@mail.com");
-
     }
+
     @Test
-    public void test_getSummary(){
-        testObject.getSummary();
+    public void name() {
     }
 }

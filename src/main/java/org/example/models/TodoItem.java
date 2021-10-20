@@ -3,12 +3,12 @@ package org.example.models;
 import java.time.LocalDate;
 
 public class TodoItem {
-    int id;
-    String title;
-    String taskDescription;
-    LocalDate deadLine;
-    boolean done;
-    Person creator;
+    private int id;
+    private String title;
+    private String taskDescription;
+    private LocalDate deadLine;
+    private boolean done;
+    private Person creator;
 
     public TodoItem(int id, String title, String taskDescription, LocalDate deadLine, boolean done, Person creator) {
         if((title == null) || (deadLine == null)){
