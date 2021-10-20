@@ -44,13 +44,11 @@ public class Person {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public static String getSummary(Person person) {
+        String summary = "{id: " + person.id + ", name: " + person.firstName + " " + person.lastName + ", email: " + person.email +"}";
+
+        return summary;
     }
+
+
 }
