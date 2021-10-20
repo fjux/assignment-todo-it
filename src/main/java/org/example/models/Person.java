@@ -44,10 +44,10 @@ public class Person {
         this.email = email;
     }
 
-    public static String getSummary(Person person) {
-        String summary = "{id: " + person.id + ", name: " + person.firstName + " " + person.lastName + ", email: " + person.email +"}";
+    public  String getSummary() {
+        return "{id: " + id + ", name: " + firstName + " " + lastName + ", email: " + email +"}";
 
-        return summary;
+
     }
 
 
