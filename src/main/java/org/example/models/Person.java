@@ -7,6 +7,9 @@ public class Person {
     private String email;
 
     public Person(int id, String firstName, String lastName, String email) {
+        if(firstName == null || lastName == null || email == null){
+            throw new RuntimeException("firstName, lastName or email was null");
+        }
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -46,8 +49,6 @@ public class Person {
 
     public  String getSummary() {
         return "{id: " + id + ", name: " + firstName + " " + lastName + ", email: " + email +"}";
-
-
     }
 
 

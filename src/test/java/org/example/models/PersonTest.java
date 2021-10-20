@@ -13,6 +13,6 @@ public class PersonTest {
     }
     @Test
     public void test_getSummary(){
-
+        testObject.getSummary();
     }
 }

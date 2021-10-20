@@ -11,6 +11,9 @@ public class TodoItem {
     Person creator;
 
     public TodoItem(int id, String title, String taskDescription, LocalDate deadLine, boolean done, Person creator) {
+        if((title == null) || (deadLine == null)){
+            throw new RuntimeException("title or deadLine was null");
+        }
         this.id = id;
         this.title = title;
         this.taskDescription = taskDescription;
@@ -68,5 +71,9 @@ public class TodoItem {
             return true;
         }
         return false;
+    }
+
+    public  String getSummary() {
+        return "{id: " + id + ", title: " + title + ", description: " + taskDescription + ", deadline: " + deadLine + ", done: " + done + ", creator: " + creator + "}";
     }
 }
