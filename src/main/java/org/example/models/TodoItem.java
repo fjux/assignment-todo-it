@@ -10,6 +10,7 @@ public class TodoItem {
     private boolean done;
     private Person creator;
 
+
     public TodoItem(int id, String title, String taskDescription, LocalDate deadLine, boolean done, Person creator) {
         if((title == null) || (deadLine == null)){
             throw new RuntimeException("title or deadLine was null");
