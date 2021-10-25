@@ -67,13 +67,10 @@ public class TodoItem {
     }
 
     public boolean isOverdue(){
-        if (deadLine.isAfter(LocalDate.now())){
-            return true;
-        }
-        return false;
+        return LocalDate.now().isAfter(deadLine);
     }
 
     public  String getSummary() {
-        return "{id: " + id + ", title: " + title + ", description: " + taskDescription + ", deadline: " + deadLine + ", done: " + done + ", creator: " + creator + "}";
+        return "{id: " + id + ", title: " + title + ", description: " + taskDescription + ", deadline: " + deadLine + ", done: " + done + ", creator: " + creator.getFirstName() + "}";
     }
 }
