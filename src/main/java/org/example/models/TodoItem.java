@@ -72,6 +72,6 @@ public class TodoItem {
     }
 
     public  String getSummary() {
-        return "{id: " + id + ", title: " + title + ", description: " + taskDescription + ", deadline: " + deadLine + ", done: " + done + ", creator: " + creator.getFirstName() + "}";
+        return "{id: " + id + ", title: " + title + ", description: " + taskDescription + ", deadline: " + deadLine + ", done: " + done + ", creator: " + creator.getFirstName() + " " + creator.getLastName() + "}";
     }
 }
