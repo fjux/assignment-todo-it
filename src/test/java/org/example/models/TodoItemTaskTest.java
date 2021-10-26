@@ -10,13 +10,12 @@ import static org.junit.Assert.*;
 public class TodoItemTaskTest {
     public static final int ID = 1;
     private Person testPerson;
-    private TodoItem testItem;
     private TodoItemTask testObject;
 
     @Before
     public void setUp() {
         testPerson = new Person(ID, "Erik", "Alfredsson", "erik@erik.nu");
-        testItem = new TodoItem(ID, "task", "do task", LocalDate.of(2021, 11, 01), testPerson);
+        TodoItem testItem = new TodoItem(ID, "task", "do task", LocalDate.of(2021, 11, 1), testPerson);
         testObject = new TodoItemTask(ID, testItem, testPerson);
     }
 
