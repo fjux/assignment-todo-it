@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class PersonTest {
     public static final int ID = 1;
@@ -38,4 +39,10 @@ public class PersonTest {
     public void constructor_throws_exception_on_null_email(){
         new Person(ID, FIRST_NAME, LAST_NAME, null);
     }
+
+    @Test
+    public void test_getSummary(){
+        assertNotNull(testObject.getSummary());
+    }
+
 }

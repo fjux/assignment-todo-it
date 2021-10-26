@@ -6,15 +6,6 @@ public class TodoItemTask {
     private TodoItem todoItem;
     private Person assignee;
 
-    public TodoItemTask(int id, boolean assigned, TodoItem todoItem, Person assignee) {
-        if(todoItem == null){
-            throw new RuntimeException("todoItem was null");
-        }
-        this.id = id;
-        this.assigned = assigned;
-        this.todoItem = todoItem;
-        this.assignee = assignee;
-    }
 
     public TodoItemTask(int id, TodoItem todoItem, Person assignee) {
         if(todoItem == null){

@@ -20,7 +20,7 @@ public class TodoItemTest {
     @Before
     public void setUp() {
         testPerson = new Person(1, "Erik", "Alfredsson", "erik@erik.nu");
-        testObject = new TodoItem(ID, TITLE, TASK_DESCRIPTION, DEADLINE, DONE, testPerson);
+        testObject = new TodoItem(ID, TITLE, TASK_DESCRIPTION, DEADLINE, testPerson);
     }
 
     @Test
@@ -35,12 +35,17 @@ public class TodoItemTest {
 
     @Test(expected = RuntimeException.class)
     public void constructor_throws_exception_on_null_title() {
-        new TodoItem(ID, null, TASK_DESCRIPTION, DEADLINE, DONE, testPerson);
+        new TodoItem(ID, null, TASK_DESCRIPTION, DEADLINE, testPerson);
     }
 
     @Test(expected = RuntimeException.class)
     public void constructor_throws_exception_on_null_deadLine() {
-        new TodoItem(ID, TITLE, TASK_DESCRIPTION, null, DONE, testPerson);
+        new TodoItem(ID, TITLE, TASK_DESCRIPTION, null, testPerson);
+    }
+
+    @Test
+    public void test_getSummary(){
+        assertNotNull(testObject.getSummary());
     }
 
 }
