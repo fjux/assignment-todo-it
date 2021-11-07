@@ -1,6 +1,7 @@
 package org.example.models;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class TodoItem {
     private int id;
@@ -70,7 +71,27 @@ public class TodoItem {
         return LocalDate.now().isAfter(deadLine);
     }
 
-    public  String getSummary() {
-        return "{id: " + id + ", title: " + title + ", description: " + taskDescription + ", deadline: " + deadLine + ", done: " + done + ", creator: " + creator.getFirstName() + " " + creator.getLastName() + "}";
+    @Override
+    public String toString() {
+        return "TodoItem{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", taskDescription='" + taskDescription + '\'' +
+                ", deadLine=" + deadLine +
+                ", done=" + done +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TodoItem todoItem = (TodoItem) o;
+        return id == todoItem.id && done == todoItem.done && Objects.equals(title, todoItem.title) && Objects.equals(taskDescription, todoItem.taskDescription) && Objects.equals(deadLine, todoItem.deadLine);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, taskDescription, deadLine, done);
     }
 }

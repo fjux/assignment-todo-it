@@ -11,11 +11,12 @@ public class PersonTest {
     public static final String FIRST_NAME = "Erik";
     public static final String LAST_NAME = "Alfredsson";
     public static final String EMAIL = "erik@erik.nu";
+    public static final AppUser APP_USER = new AppUser("erikalf", "12sre567yt", AppRole.ROLE_APP_USER);
     Person testObject;
 
     @Before
     public void setUp() {
-        testObject = new Person(ID, FIRST_NAME, LAST_NAME, EMAIL);
+        testObject = new Person(ID, FIRST_NAME, LAST_NAME, EMAIL, APP_USER);
     }
 
     @Test
@@ -27,22 +28,22 @@ public class PersonTest {
     }
     @Test(expected = RuntimeException.class)
     public void constructor_throws_exception_on_null_firstName(){
-        new Person(ID, null, LAST_NAME, EMAIL);
+        new Person(ID, null, LAST_NAME, EMAIL, APP_USER);
     }
 
     @Test(expected = RuntimeException.class)
     public void constructor_throws_exception_on_null_lastName(){
-        new Person(ID, FIRST_NAME, null, EMAIL);
+        new Person(ID, FIRST_NAME, null, EMAIL, APP_USER);
     }
 
     @Test(expected = RuntimeException.class)
     public void constructor_throws_exception_on_null_email(){
-        new Person(ID, FIRST_NAME, LAST_NAME, null);
+        new Person(ID, FIRST_NAME, LAST_NAME, null, APP_USER);
     }
 
     @Test
-    public void test_getSummary(){
-        assertNotNull(testObject.getSummary());
+    public void test_toString(){
+        assertNotNull(testObject.toString());
     }
 
 }

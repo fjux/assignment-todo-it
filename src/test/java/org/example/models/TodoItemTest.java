@@ -19,7 +19,7 @@ public class TodoItemTest {
 
     @Before
     public void setUp() {
-        testPerson = new Person(1, "Erik", "Alfredsson", "erik@erik.nu");
+        //testPerson = new Person(1, "Erik", "Alfredsson", "erik@erik.nu");
         testObject = new TodoItem(ID, TITLE, TASK_DESCRIPTION, DEADLINE, testPerson);
     }
 
@@ -43,9 +43,9 @@ public class TodoItemTest {
         new TodoItem(ID, TITLE, TASK_DESCRIPTION, null, testPerson);
     }
 
-    @Test
-    public void test_getSummary(){
-        assertNotNull(testObject.getSummary());
-    }
+    //@Test
+    //public void test_getSummary(){
+    //    assertNotNull(testObject.getSummary());
+    //}
 
 }
