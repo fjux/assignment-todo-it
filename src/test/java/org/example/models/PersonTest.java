@@ -2,6 +2,7 @@ package org.example.models;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.After;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -18,6 +19,7 @@ public class PersonTest {
     public void setUp() {
         testObject = new Person(ID, FIRST_NAME, LAST_NAME, EMAIL, APP_USER);
     }
+
 
     @Test
     public void testObject_successfully_instantiated(){

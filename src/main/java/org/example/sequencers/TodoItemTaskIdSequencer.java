@@ -10,8 +10,4 @@ public class TodoItemTaskIdSequencer {
     public void setCurrentId(int currentId) {
         this.currentId = currentId;
     }
-
-    private static int nextId(){
-
-    }
 }

@@ -10,13 +10,20 @@ public class Person {
     private AppUser credentials;
 
     public Person(int id, String firstName, String lastName, String email, AppUser credentials) {
-        if(firstName == null || lastName == null || email == null){
-            throw new RuntimeException("firstName, lastName or email was null");
-        }
+
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
+        if (firstName == null) {
+            throw new RuntimeException("firstName was null.");
+        }else{this.firstName = firstName;
+        }
+        if (lastName == null) {
+            throw new RuntimeException("lastName was null.");
+        }else{this.lastName = lastName;
+        }
+        if (email == null) {
+            throw new RuntimeException("email was null.");
+        }else{this.email = email;
+        }
         this.credentials = credentials;
     }
 
