@@ -2,7 +2,6 @@ package org.example.models;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.After;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -17,7 +16,7 @@ public class PersonTest {
 
     @Before
     public void setUp() {
-        testObject = new Person(ID, FIRST_NAME, LAST_NAME, EMAIL, APP_USER);
+        testObject = new Person(FIRST_NAME, LAST_NAME, EMAIL, APP_USER);
     }
 
 
@@ -30,17 +29,17 @@ public class PersonTest {
     }
     @Test(expected = RuntimeException.class)
     public void constructor_throws_exception_on_null_firstName(){
-        new Person(ID, null, LAST_NAME, EMAIL, APP_USER);
+        new Person(null, LAST_NAME, EMAIL, APP_USER);
     }
 
     @Test(expected = RuntimeException.class)
     public void constructor_throws_exception_on_null_lastName(){
-        new Person(ID, FIRST_NAME, null, EMAIL, APP_USER);
+        new Person(FIRST_NAME, null, EMAIL, APP_USER);
     }
 
     @Test(expected = RuntimeException.class)
     public void constructor_throws_exception_on_null_email(){
-        new Person(ID, FIRST_NAME, LAST_NAME, null, APP_USER);
+        new Person(FIRST_NAME, LAST_NAME, null, APP_USER);
     }
 
     @Test

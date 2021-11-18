@@ -11,4 +11,8 @@ public class PersonIdSequencer {
     public void setCurrentId(int currentId) {
         this.currentId = currentId;
     }
+    public static int nextId() {
+        currentId++;
+        return currentId;
+    }
 }

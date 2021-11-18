@@ -1,5 +1,7 @@
 package org.example.models;
 
+import org.example.sequencers.PersonIdSequencer;
+
 import java.util.Objects;
 
 public class Person {
@@ -9,9 +11,9 @@ public class Person {
     private String email;
     private AppUser credentials;
 
-    public Person(int id, String firstName, String lastName, String email, AppUser credentials) {
+    public Person(String firstName, String lastName, String email, AppUser credentials) {
 
-        this.id = id;
+        int id = PersonIdSequencer.nextId();
         if (firstName == null) {
             throw new RuntimeException("firstName was null.");
         }else{this.firstName = firstName;
