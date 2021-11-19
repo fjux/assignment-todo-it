@@ -2,17 +2,18 @@ package org.example.sequencers;
 
 public class PersonIdSequencer {
 
-    private int currentId;
+    private static int currentId;
 
-    public int getCurrentId() {
+    public static int nextId(){
+        return ++currentId;
+    }
+
+    public static int getCurrentId() {
         return currentId;
     }
 
-    public void setCurrentId(int currentId) {
-        this.currentId = currentId;
+    public static void setCurrentId(int currentId) {
+       PersonIdSequencer.currentId = currentId;
     }
-    public static int nextId() {
-        currentId++;
-        return currentId;
-    }
+
 }

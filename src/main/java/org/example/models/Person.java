@@ -11,9 +11,9 @@ public class Person {
     private String email;
     private AppUser credentials;
 
-    public Person(String firstName, String lastName, String email, AppUser credentials) {
+    public Person(String firstName, String lastName, String email) {
 
-        int id = PersonIdSequencer.nextId();
+        this.id = PersonIdSequencer.nextId();
         if (firstName == null) {
             throw new RuntimeException("firstName was null.");
         }else{this.firstName = firstName;

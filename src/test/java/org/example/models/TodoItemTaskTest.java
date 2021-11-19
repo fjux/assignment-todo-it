@@ -8,20 +8,18 @@ import java.time.LocalDate;
 import static org.junit.Assert.*;
 
 public class TodoItemTaskTest {
-    public static final int ID = 1;
     private Person testPerson;
     private TodoItemTask testObject;
 
     @Before
     public void setUp() {
-       // testPerson = new Person(ID, "Erik", "Alfredsson", "erik@erik.nu");
-        TodoItem testItem = new TodoItem(ID, "task", "do task", LocalDate.of(2021, 11, 1), testPerson);
-        testObject = new TodoItemTask(ID, testItem, testPerson);
+       testPerson = new Person("Erik", "Alfredsson", "erik@erik.nu");
+        TodoItem testItem = new TodoItem("task", "do task", LocalDate.of(2021, 11, 1), testPerson);
+        testObject = new TodoItemTask(testItem, testPerson);
     }
 
     @Test
     public void testObject_successfully_instantiated() {
-        assertEquals(ID, testObject.getId());
         assertEquals(testPerson, testObject.getAssignee());
         assertNotNull(testObject.getTodoItem());
         assertTrue(testObject.isAssigned());
@@ -29,7 +27,7 @@ public class TodoItemTaskTest {
 
     @Test(expected = RuntimeException.class)
     public void constructor_throws_exception_on_null_testItem() {
-        new TodoItemTask(ID, null, testPerson);
+        new TodoItemTask(null, testPerson);
     }
 
    // @Test

@@ -1,18 +1,18 @@
 package org.example.sequencers;
 
 public class TodoItemTaskIdSequencer {
-    private int currentId;
 
-    public int getCurrentId() {
+    private static int currentId;
+
+    public static int getCurrentId() {
         return currentId;
     }
 
-    public void setCurrentId(int currentId) {
-        this.currentId = currentId;
+    public static void setCurrentId(int currentId) {
+        TodoItemTaskIdSequencer.currentId = currentId;
     }
 
-    public int nextId() {
-        currentId++;
-        return currentId;
+    public static int nextId() {
+        return ++currentId;
     }
 }

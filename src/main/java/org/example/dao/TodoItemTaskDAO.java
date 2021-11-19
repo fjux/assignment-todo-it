@@ -9,7 +9,7 @@ public interface TodoItemTaskDAO {
 
     TodoItemTask persist(TodoItemTask todoItemTask);
     List<TodoItemTask> findAll();
-    TodoItemTask findByAssigned(Boolean assigned);
-    TodoItemTask findByPersonId(int personId);
+    List<TodoItemTask> findByAssigned(Boolean assigned);
+    List<TodoItemTask> findByPersonId(int personId);
     void remove(int id);
 }

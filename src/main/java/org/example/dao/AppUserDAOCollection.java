@@ -8,23 +8,33 @@ public class AppUserDAOCollection implements AppUserDAO{
 
     List<AppUser> appUsers;
 
+    public AppUserDAOCollection(List<AppUser> appUsers) {
+        this.appUsers = appUsers;
+    }
+
     @Override
     public AppUser persist(AppUser appUser) {
-        return null;
+        appUsers.add(appUser);
+        return appUser;
     }
 
     @Override
     public List<AppUser> findAll() {
-        return null;
+        return appUsers;
     }
 
     @Override
     public AppUser findByUsername(String username) {
-        return null;
+        for(AppUser appUser : appUsers)
+            if(appUser.getUsername().equals(username)) {
+                return appUser;
+            }
+        throw new RuntimeException("Could not find app user with username " + username);
     }
 
     @Override
     public void remove(String username) {
+        appUsers.removeIf(appUser -> appUser.getUsername().equals(username));
 
     }
 }

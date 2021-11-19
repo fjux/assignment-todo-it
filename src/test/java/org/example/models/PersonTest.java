@@ -16,7 +16,7 @@ public class PersonTest {
 
     @Before
     public void setUp() {
-        testObject = new Person(FIRST_NAME, LAST_NAME, EMAIL, APP_USER);
+        testObject = new Person(FIRST_NAME, LAST_NAME, EMAIL);
     }
 
 
@@ -29,17 +29,17 @@ public class PersonTest {
     }
     @Test(expected = RuntimeException.class)
     public void constructor_throws_exception_on_null_firstName(){
-        new Person(null, LAST_NAME, EMAIL, APP_USER);
+        new Person(null, LAST_NAME, EMAIL);
     }
 
     @Test(expected = RuntimeException.class)
     public void constructor_throws_exception_on_null_lastName(){
-        new Person(FIRST_NAME, null, EMAIL, APP_USER);
+        new Person(FIRST_NAME, null, EMAIL);
     }
 
     @Test(expected = RuntimeException.class)
     public void constructor_throws_exception_on_null_email(){
-        new Person(FIRST_NAME, LAST_NAME, null, APP_USER);
+        new Person(FIRST_NAME, LAST_NAME, null);
     }
 
     @Test

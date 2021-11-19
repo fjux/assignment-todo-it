@@ -1,5 +1,7 @@
 package org.example.models;
 
+import org.example.sequencers.TodoItemTaskIdSequencer;
+
 import java.util.Objects;
 
 public class TodoItemTask {
@@ -9,17 +11,13 @@ public class TodoItemTask {
     private Person assignee;
 
 
-    public TodoItemTask(int id, TodoItem todoItem, Person assignee) {
+    public TodoItemTask(TodoItem todoItem, Person assignee) {
         if(todoItem == null){
             throw new RuntimeException("todoItem was null");
         }
-        this.id = id;
+        this.id = TodoItemTaskIdSequencer.nextId();
         this.todoItem = todoItem;
         this.assignee = assignee;
-        /* The code is cleaner when written like setAssigned(this.assignee != null;
-        But for now my version helps me stop my thought patterns of constantly finding a deeper level.
-        When my understanding of Java is greater I will refactor my code to the cleaner variant.
-         */
         if(this.assignee != null){
             setAssigned(true);
         }
